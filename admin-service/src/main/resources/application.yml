@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: admin-service
+  # Datasource postgres
+  datasource:
+    url: jdbc:postgresql://localhost:5432/football-score
+    username: football-score
+    password: password
+
+# Configuracion del servidor embebido
+server:
+  port: 8081
+  servlet:
+    context-path: /admin
+
