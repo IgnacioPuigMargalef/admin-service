@@ -1,2 +1,3 @@
 #Ignoramos los volumenes de docker con el contenido de las bases de datos
 postgres/
+redis_data/

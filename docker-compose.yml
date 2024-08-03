@@ -1,4 +1,5 @@
 services:
+  # POSTGRES DATABASE
   postgres:
     container_name: football-score-db
     image: postgres
@@ -14,6 +15,21 @@ services:
     networks:
       - postgres
     restart: unless-stopped
+
+  # REDIS IN-MEMORY DATABASE
+  redis:
+    container_name: redis-db
+    image: redis/redis-stack:latest
+    environment:
+      - REDIS_PASSWORD=5234
+    volumes:
+      - ./redis_data:/data
+    ports: 
+      # Database
+      - "6379:6379"
+      # Client redis insight
+      - "8099:8001"
+
 
 networks:
   postgres:
